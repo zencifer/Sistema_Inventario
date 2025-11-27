@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio de Sesión - Sistema de Inventario</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/pages/login.css') }}">
+    <link rel="stylesheet" href="../static/css/base.css">
+    <link rel="stylesheet" href="../static/css/pages/login.css">
 </head>
 <body>
 <div class="login-container">
@@ -18,13 +18,7 @@
         <p>Ingrese sus credenciales para continuar</p>
     </div>
 
-    {% if error %}
-        <div class="error-message">
-            {{ error }}
-        </div>
-    {% endif %}
-
-    <form method="POST" action="{{ url_for('login') }}">
+    <form method="POST" action="login.html">
         <div class="login-box">
             <div class="login-box-title">Datos de inicio de sesión</div>
 

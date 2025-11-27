@@ -6,6 +6,7 @@ button {
     border-radius: 6px;      /* Esquinas redondeadas (opcional) */
     cursor: pointer;
     transition: background-color 0.3s ease;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 button:hover{
@@ -15,4 +16,12 @@ button:hover{
 
 button:active{
     background-color: var(--dorado-oscuro-unison);
+}
+
+.apartado-botones-secundarios{
+    text-align: center;
+}
+
+.pestana-volver-atras{
+    justify-self: flex-start;
 }
