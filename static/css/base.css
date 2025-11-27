@@ -1,0 +1,23 @@
+:root {
+    --azul-unison: #00529e;
+    --azul-oscuro-unison: #015294;
+    --dorado-unison: #f8bb00;
+    --dorado-oscuro-unison: #d99e30;
+    --blanco: #ffffff;
+    --texto-principal: #333333;
+}
+
+/* Tipografía base - Segoe UI */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--azul-oscuro-unison);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+button{
+    border-radius: 4px;
+    background-color: var(--azul-oscuro-unison);
+    color: var(--dorado-unison);
+}

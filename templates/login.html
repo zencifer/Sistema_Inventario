@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de Sesión - Sistema de Inventario</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/pages/login.css') }}">
+</head>
+<body>
+<div class="login-container">
+    <div class="unison-logo">
+        <h1>Universidad de Sonora</h1>
+    </div>
+
+    <div class="login-header">
+        <h1>Sistema de Inventario</h1>
+        <p>Ingrese sus credenciales para continuar</p>
+    </div>
+
+    {% if error %}
+        <div class="error-message">
+            {{ error }}
+        </div>
+    {% endif %}
+
+    <form method="POST" action="{{ url_for('login') }}">
+        <div class="login-box">
+            <div class="login-box-title">Datos de inicio de sesión</div>
+
+            <div class="form-group">
+                <label for="nombre">Nombre del usuario</label>
+                <input
+                        type="text"
+                        id="nombre"
+                        name="nombre"
+                        required
+                        autofocus
+                        placeholder="Ingrese su usuario"
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="password">Contraseña</label>
+                <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        required
+                        placeholder="Ingrese su contraseña"
+                >
+            </div>
+        </div>
+
+        <button type="submit" class="btn-login">Iniciar sesión</button>
+    </form>
+
+</div>
+</body>
+</html>

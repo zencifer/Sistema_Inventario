@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Inicio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/components/buttons.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/pages/inicio.css') }}">
+    <style>
+        body {
+            background: linear-gradient(135deg, #00529e 0%, #015294 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    </style>
+</head>
+<body>
+<div class="inicio-container">
+    <div class="img-unison-logo">
+        <img src="/static/images/LogoUnison.gif" alt="Logo Unison">
+    </div>
+
+    <div class="titulo-aplicacion">
+        <h3 class="titulo-aplicacion">Sistema basico de Inventario</h3>
+    </div>
+
+    <div class="nombre-usuario">
+        <h4>Inserte nombre de usuario</h4>
+    </div>
+
+    <div class="apartado-botones-secundarios">
+        <button type="button" >Inicio</button>
+        <button type="button" >Productos</button>
+        <button type="button" >Almacenes</button>
+    </div>
+</div>
+
+</body>
+</html>
