@@ -25,10 +25,11 @@
     </div>
 
     <div class="apartado-botones-secundarios">
-        <button type="button" >Inicio</button>
-        <button type="button" >Productos</button>
-        <button type="button" >Almacenes</button>
+    <button type="button" onclick="window.location.href='{{ url_for('inicio') }}'">Inicio</button>
+    <button type="button" onclick="window.location.href='{{ url_for('productos') }}'">Productos</button>
+    <button type="button" onclick="window.location.href='{{ url_for('almacenes') }}'">Almacenes</button>
     </div>
+
 </div>
 
 </body>

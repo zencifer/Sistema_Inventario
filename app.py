@@ -7,7 +7,8 @@ from functools import wraps
 app = Flask(__name__)
 app.secret_key = 'tu_clave_secreta_muy_segura_2024'  # Cambia esto por una clave segura en producción
 
-# Decorador para proteger rutas que requieren autenticación
+
+# Decorador para proteger rutas que requieren autenticación A
 def login_requerido(f):
     @wraps(f)
     def decorated_function(*args, **kwargs):
@@ -19,8 +20,8 @@ def login_requerido(f):
 
 # Función para obtener conexión a la base de datos
 def get_db_connection():
-    conn = sqlite3.connect('instance/inventario.db')
-    conn.row_factory = sqlite3.Row  # Para acceder a las columnas por nombre
+    conn = sqlite3.connect('instance/InventarioBD.db')
+    conn.row_factory = sqlite3.Row
     return conn
 
 # Función de verificación de usuario
@@ -58,6 +59,7 @@ def verificar_usuario(nombre, password):
 # Ruta principal - redirige según estado de sesión
 @app.route('/')
 def index():
+    session.clear()
     if 'usuario' in session:
         return redirect(url_for('inicio'))
     return redirect(url_for('login'))
@@ -84,9 +86,9 @@ def login():
         if usuario:
             # Guardar información en la sesión
             session['usuario'] = usuario['nombre']
-            session['usuario_id'] = usuario['id_usuario']
+            session['usuario_id'] = usuario['id']
             session['rol'] = usuario['rol']
-            session['nombre_completo'] = f"{usuario['nombre']} {usuario['apellido']}"
+            session['nombre_completo'] = usuario['nombre']
 
             flash(f'¡Bienvenido {usuario["nombre"]}!', 'success')
             return redirect(url_for('inicio'))
@@ -109,7 +111,16 @@ def inicio():
 @app.route('/productos')
 @login_requerido
 def productos():
+    conn = get_db_connection()
+    cursor = conn.cursor()
+
+    cursor.execute('SELECT * FROM productos')
+    productos = cursor.fetchall()
+
+    conn.close()
+
     return render_template('productos.html',
+                           productos=productos,
                            usuario=session.get('usuario'),
                            rol=session.get('rol'))
 
@@ -117,9 +128,19 @@ def productos():
 @app.route('/almacenes')
 @login_requerido
 def almacenes():
+    conn = get_db_connection()
+    cursor = conn.cursor()
+
+    cursor.execute('SELECT * FROM almacenes')
+    almacenes = cursor.fetchall()
+
+    conn.close()
+
     return render_template('almacenes.html',
+                           almacenes=almacenes,
                            usuario=session.get('usuario'),
                            rol=session.get('rol'))
+
 
 # Ruta de logout
 @app.route('/logout')
