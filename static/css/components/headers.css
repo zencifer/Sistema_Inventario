@@ -1,0 +1,12 @@
+.container-header{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.container-header h2{
+    display: flex;
+    align-items: center;
+    color: var(--dorado-unison);
+    margin-left: 40px;
+}

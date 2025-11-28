@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Inicio</title>
+    <link rel="stylesheet" href="../static/css/base.css">
+    <link rel="stylesheet" href="../static/css/components/buttons.css">
+    <link rel="stylesheet" href="../static/css/pages/inicio.css">
+</head>
+<body>
+<div class="inicio-container">
+    <div class="img-unison-logo">
+        <img src="/static/images/LogoUnison.gif" alt="Logo Unison">
+    </div>
+
+    <div class="titulo-aplicacion">
+        <h3 class="titulo-aplicacion">Sistema básico de Inventario</h3>
+    </div>
+
+    <div class="nombre-usuario">
+        <h4>Pablo Iván Durazo Irigoyen</h4><br>
+        <h4>Omar Corral Castro</h4><br>
+        <h4>Miguel Franco</h4><br>
+
+    </div>
+
+    <div class="apartado-botones-secundarios">
+    <button type="button" onclick="window.location.href='{{ url_for('inicio') }}'">Inicio</button>
+    <button type="button" onclick="window.location.href='{{ url_for('productos') }}'">Productos</button>
+    <button type="button" onclick="window.location.href='{{ url_for('almacenes') }}'">Almacenes</button>
+    </div>
+
+</div>
+
+</body>
+</html>

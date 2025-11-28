@@ -1,0 +1,28 @@
+button {
+    padding: 12px 24px;      /* Botón más grande */
+    font-size: 16px;         /* Texto más grande y legible */
+    min-width: 120px;        /* Mismo ancho para todos */
+    margin: 6px;             /* Espaciado entre botones */
+    border-radius: 6px;      /* Esquinas redondeadas (opcional) */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+button:hover{
+    background-color: var(--dorado-unison);
+    color: var(--azul-oscuro-unison);
+}
+
+button:active{
+    background-color: var(--dorado-oscuro-unison);
+}
+
+.apartado-botones-secundarios{
+    display: flex;
+    text-align: center;
+}
+
+.pestana-volver-atras{
+    justify-self: flex-start;
+}
