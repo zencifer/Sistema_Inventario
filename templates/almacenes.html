@@ -38,7 +38,7 @@
 
             <!-- se agragan los botones de aplicar o limpiar los filtros  -->
             <div class="mt-3 d-flex justify-content-end gap-2">
-                <button type="submit" class="btn btn-primary">Aplicar</button>
+                <button type="submit">Aplicar</button>
                 <a href="{{ url_for('almacenes') }}" class="btn btn-outline-secondary">Limpiar</a>
             </div>
         </form>
@@ -63,10 +63,10 @@
                         <td>{{ a['nombre'] }}</td>
                         <td class="d-flex gap-1">
                             {% if rol == 'ADMIN' or rol == 'ALMACENES' %}    <!-- se agregan las acciones de modificar y eliminar en la tabla  -->
-                                <a href="{{ url_for('modificar_almacen', id=a['id']) }}" class="btn btn-sm btn-warning">Modificar</a>
+                                <a href="{{ url_for('modificar_almacen', id=a['id']) }}" class="modify-button">Modificar</a>
                                 <form method="POST" action="{{ url_for('eliminar_almacen', id=a['id']) }}"
                                       onsubmit="return confirm('¿Está seguro de que desea eliminar el almacén {{ a['nombre'] }}?');">
-                                    <button type="submit" class="btn btn-sm btn-danger">Eliminar</button>
+                                    <button type="submit" class="eliminar-button">Eliminar</button>
                                 </form>
                             {% else %}
                                 <span class="text-muted">No Autorizado</span>
@@ -80,7 +80,7 @@
         <!-- aqui dibuja el boton para agregar uno nuevo  -->
         <div class="apartado-botones-secundarios mt-3 d-flex justify-content-end gap-2">
             {% if rol == 'ADMIN' or rol == 'ALMACENES' %}
-                <button type="button" class="btn btn-success btn-lg" onclick="window.location.href='{{ url_for('crear_almacen') }}'">
+                <button type="button" onclick="window.location.href='{{ url_for('crear_almacen') }}'">
                     Agregar Almacén
                 </button>
             {% endif %}
