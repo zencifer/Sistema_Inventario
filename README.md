@@ -1,4 +1,5 @@
 1.INTRODUCCION
+
 Este proyecto corresponde al desarrollo de un Sistema Básico de Inventario implementado con Flask, SQLite y una estructura modular de plantillas HTML, hojas de estilo y rutas protegidas por autenticación. El sistema permite gestionar información de productos y almacenes mediante una interfaz sencilla, organizada y funcional, diseñada especialmente para fines académicos dentro del contexto de la Universidad de Sonora.
 
 El proyecto integra conceptos clave del desarrollo web, tales como rutas dinámicas, manejo de sesiones, validación de usuarios, conexión con base de datos, renderizado de información con plantillas, y uso de Bootstrap para mejorar la presentación visual. Asimismo, se aplican principios de seguridad básicos, como el cifrado de contraseñas, el control de accesos y la protección de páginas mediante decoradores personalizados.
